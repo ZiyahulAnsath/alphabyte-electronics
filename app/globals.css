@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import "tailwindcss/base";
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap'); */
+/* :root {
+  --background-start-rgb: 16,16,16;
+  --background-end-rgb: 16,16,16;
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,11 +18,48 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #101010;
+  color:#cbd5e1;
+}
+
+/* section {
+  display:flex;
+} */
+
+/* section div{
+  position: absolute;
+}
+
+section div:nth-child(1){
+  top: -350px;
+  left:80%;
+  width: 480px;
+  height: 480px;
+  background:linear-gradient(24deg, #4E6751, #585B3C);
+  filter: blur(300px);
+}
+section div:nth-child(2){
+  top: -425px;
+  left: -425px;
+  width: 850px;
+  height: 850px;
+  border-radius: 50%;
+  border: 50px solid #26FFC2; 
+  filter: blur(100px);
+  background:transparent;
+}
+
+*/
+
+.glossy_icon{
+ 
+  color:#B4B4B4;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  padding:0.4rem;
+  cursor: pointer;
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
+} 
+.glossy_icon:hover{
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
 }

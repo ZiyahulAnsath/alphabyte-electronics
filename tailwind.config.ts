@@ -8,6 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      
+      fontFamily:{
+        cursive:["cursive", "sans-serif"],
+        fantasy:["fantasy", "sans-serif"],
+        raleway:["raleway","sans-serif"],
+        montserrat:['Montserrat Alternates','cursive'],
+        titne:['Titan One','cursive'],
+      },
+      colors: {
+        green:{
+          background:"#26FFC2",
+          li_background:{
+            main:"#4E6751",
+            sub:"#585B3C"
+          },
+          text:"#11F428"
+        },
+        gray:{
+          bg_primary:"#101010",
+          text:"#B4B4B4"
+        }
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
