@@ -22,35 +22,8 @@ body {
   color:#cbd5e1;
 }
 
-/* section {
-  display:flex;
-} */
 
-/* section div{
-  position: absolute;
-}
-
-section div:nth-child(1){
-  top: -350px;
-  left:80%;
-  width: 480px;
-  height: 480px;
-  background:linear-gradient(24deg, #4E6751, #585B3C);
-  filter: blur(300px);
-}
-section div:nth-child(2){
-  top: -425px;
-  left: -425px;
-  width: 850px;
-  height: 850px;
-  border-radius: 50%;
-  border: 50px solid #26FFC2; 
-  filter: blur(100px);
-  background:transparent;
-}
-
-*/
-
+/* start header */
 .glossy_icon{
  
   color:#B4B4B4;
@@ -63,3 +36,47 @@ section div:nth-child(2){
 .glossy_icon:hover{
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
 }
+/* End header */
+
+
+/* Start hero */
+.glossy_hero{
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  cursor: pointer;
+}
+
+.ant-carousel-dots .slick-slider li {
+  height: 100px; /* Set your desired height here */
+}
+
+.ant-carousel-dots .slick-slider button {
+  width: 100px; /* Set your desired width here */
+  height: 100px; /* Set your desired height here */
+}
+
+.glossy_brand{
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  cursor: pointer;
+  /* border: transparent; */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  /* padding:0.4rem; */
+
+}
+/* End hero */
+
+
+/* Start card */
+
+.card_icon{
+ 
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  /* padding: 20px; */
+} 
+
+
+/* .card_icon:hover{
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+} */
+/* End card */

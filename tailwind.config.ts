@@ -8,7 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      height: {
+        '80vh': '80vh',
+      },      
       fontFamily:{
         cursive:["cursive", "sans-serif"],
         fantasy:["fantasy", "sans-serif"],
@@ -27,7 +29,8 @@ const config: Config = {
         },
         gray:{
           bg_primary:"#101010",
-          text:"#B4B4B4"
+          text:"#B4B4B4",
+          bg_categories:"#4B4A48"
         }
       },
       backgroundImage: {
@@ -38,5 +41,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  
 }
 export default config
