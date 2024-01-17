@@ -5,9 +5,24 @@ import { Carousel } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { bannerContent } from "@/data/bannerContent";
-import BrandPage from "./BrandPage/page";
+import { CarouselRef } from "antd/es/carousel";
+import { useState, useRef } from "react";
+
 
 const BannerPage = () => {
+  // const [currentSlide, setCurrentSlide] = useState(0);
+  // const carouselRef = useRef<CarouselRef>(null);
+
+  // const handleSlideChange = (index: number) => {
+  //   console.log(`Carousel slide changed: ${index}`);
+  //   setCurrentSlide(index);
+  // };
+
+  // const handleSilhouetteClick = (index: number) => {
+  //   console.log(`Silhouette clicked: ${index}`);
+  //   setCurrentSlide(index);
+  //   carouselRef.current?.goTo(index, false);
+  // };
   return (
     <>
       <div className="glossy_hero border rounded-3xl p-4 md:p-16">
