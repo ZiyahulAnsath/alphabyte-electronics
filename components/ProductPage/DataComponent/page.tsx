@@ -3,7 +3,7 @@ import { useState } from "react";
 import Price from "./Price/page";
 import Link from "next/link";
 
-const DataComponent = ({ laptop}) => {
+const DataComponent = ({ laptop}:any) => {
   const [quantity, setQuantity] = useState(1);
 
   return (

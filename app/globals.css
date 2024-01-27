@@ -67,7 +67,6 @@ body {
 
 
 /* Start card */
-
 .card_icon{
  
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
@@ -80,3 +79,8 @@ body {
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
 } */
 /* End card */
+
+.ant-spin-dot-item {
+  background-color: #11F428 !important;
+  color:"white"
+}

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Bars3Icon, EyeIcon } from "@heroicons/react/16/solid";
 import { SplitCellsOutlined } from "@ant-design/icons";
 import Link from "next/link";
+
 
 const tabs = [
   { id: "specification", label: "Specification", icon: Bars3Icon },
@@ -11,12 +11,13 @@ const tabs = [
   { id: "compare", label: "Compare", icon: SplitCellsOutlined },
 ];
 
-const ResponsiveTabs = () => {
-  const [activeTab, setActiveTab] = useState("specification");
-
-  const handleTabClick = (tabId) => {
+const ResponsiveTabs = ({activeTab, setActiveTab}:any) => {
+  
+  const handleTabClick = (tabId:any) => {
     setActiveTab(tabId);
   };
+
+  
 
   return (
     <>
@@ -37,8 +38,11 @@ const ResponsiveTabs = () => {
           </div>
         </Link>
       ))}
+
+      
     </>
   );
 };
 
 export default ResponsiveTabs;
+
