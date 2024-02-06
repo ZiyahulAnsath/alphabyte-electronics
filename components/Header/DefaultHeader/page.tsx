@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,10 +10,16 @@ import {
   UserIcon,
 } from "@heroicons/react/16/solid";
 import { Badge } from "antd";
+import { useRouter } from "next/navigation";
 
 const Links = ["Home", "Services", "Gallery", "Contact"];
 
 const DefaultHeader = () => {
+
+  const router = useRouter();
+ const handleCart=()=>{
+    router.push('/cart')
+  }
   return (
     <nav className="md:h-20 p-4 w-full shadow-xl ">
       {/* Desktop Menu */}
@@ -51,7 +58,7 @@ const DefaultHeader = () => {
             </div>
             <Badge count={10} color="green">
               <div className="glossy_icon hidden lg:block hover:text-green-text">
-                <ShoppingCartIcon className="w-6 h-6" />
+                <ShoppingCartIcon className="w-6 h-6" onClick={handleCart}/>
               </div>
             </Badge>
             <div className="glossy_icon hidden lg:block hover:text-green-text">

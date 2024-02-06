@@ -46,12 +46,12 @@ body {
 }
 
 .ant-carousel-dots .slick-slider li {
-  height: 100px; /* Set your desired height here */
+  height: 100px; 
 }
 
 .ant-carousel-dots .slick-slider button {
-  width: 100px; /* Set your desired width here */
-  height: 100px; /* Set your desired height here */
+  width: 100px; 
+  height: 100px; 
 }
 
 .glossy_brand{
@@ -84,3 +84,20 @@ body {
   background-color: #11F428 !important;
   color:"white"
 }
+
+
+.ant-table-wrapper .ant-table {
+  background: transparent;
+  color: #B4B4B4;
+}
+/* .ant-table-wrapper .ant-table::before {
+  background: rgba(128, 128, 128, 0.5);
+} */
+.ant-table-wrapper .ant-table:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+/* 
+.ant-table-wrapper .ant-table::after {
+  background: rgba(255, 0, 0, 0.5);
+} */
+
