@@ -13,7 +13,7 @@ const FillterComponent = () => {
 
   return (
     <>
-      <div className="border-r-2 border-green-text ">
+      {/* <div className="border-r-2 border-green-text "> */}
         <div className="pb-5 pr-2">
           <h1 className="text-2xl">Price</h1>
           <Price />
@@ -40,7 +40,7 @@ const FillterComponent = () => {
             </div>
           ))}
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 };

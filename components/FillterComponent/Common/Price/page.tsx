@@ -12,7 +12,7 @@ const Price = () => {
   return (
     <>
       <div className="flex justify-between">
-        <span className=" text-sm text-green-text">{`Max: ${sliderValues[0]}`}</span>
+        <span className=" text-sm text-green-text">{`Min: ${sliderValues[0]}`}</span>
         <span className=" text-sm text-gray-text">-</span>
 
         <span className=" text-sm text-green-text">{`Max: ${sliderValues[1]}`}</span>

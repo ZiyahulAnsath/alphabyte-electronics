@@ -8,10 +8,10 @@ import lgo2 from "@/public/2.png";
 import lgo3 from "@/public/3.png";
 import Link from "next/link";
 
-const FillterCardComponent = ({ isInStock }) => {
+const FillterCardComponent = ({ isInStock }:any) => {
   return (
     <>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 md:gap-4 lg:gap-8">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 md:gap-3 lg:gap-5">
         <div className="glossy_brand flex flex-col mb-3 hover:font-semibold hover:shadow-xl hover:shadow-green-text/60">
           <div className="relative">
             <Image
