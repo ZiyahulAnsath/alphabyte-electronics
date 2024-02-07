@@ -21,9 +21,10 @@ const DefaultHeader = () => {
     router.push('/cart')
   }
   return (
-    <nav className="md:h-20 p-4 w-full shadow-xl ">
+    <nav className="w-full shadow-xl mb-5">
       {/* Desktop Menu */}
-      <div className=" sm:flex hidden justify-between items-center h-full px-4 w-full">
+      <div className="hidden lg:block">
+      <div className="flex justify-between items-center h-full px-4 w-full">
         <div className=" cursor-pointer">
           <Link href={"/"}>
             <Image src={"/test.png"} alt="logo" width={60} height={60} />
@@ -66,6 +67,7 @@ const DefaultHeader = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Mobile Menu */}
