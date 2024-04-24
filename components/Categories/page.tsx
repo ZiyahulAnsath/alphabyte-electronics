@@ -11,7 +11,7 @@ export default function Categories() {
             <div className="flex md:gap-8 items-center bg-gray-bg_categories  ease-in-out duration-300 hover:bg-green-text hover:text-gray-bg_primary text-gray-text border-none rounded-r-md mb-3">
               <div className="mx-auto">
                 <Image
-                  src={"/alphabyte.svg"}
+                  src={"/images/logo/logo-icon2.svg"}
                   alt="logo"
                   width={60}
                   height={60}

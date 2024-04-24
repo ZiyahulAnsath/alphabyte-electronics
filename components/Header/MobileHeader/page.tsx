@@ -56,7 +56,7 @@ export default function MobileMenu() {
               <div className="mb-2">
                 {" "}
                 <Link href={"/"}>
-                  <Image src={"/logo/logo.svg"} alt="logo" width={150} height={100} />
+                  <Image src={"/images/logo/logo.svg"} alt="logo" width={150} height={100} />
                 </Link>
               </div>
               <div>

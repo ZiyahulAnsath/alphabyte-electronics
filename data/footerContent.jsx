@@ -32,21 +32,21 @@ export const footerPosts =[
                 routerPath:"/",
                 name:"ASUS ROG-ZEPHYRUS",
                 description:"Ryzan-7 4th Generation 512Gb nvme-SSD 240HZ Display",
-                img:"/test.png"
+                img:"/images/logo/logo-icon2.svg"
             }, 
             {
                 id:2,
                 routerPath:"/",
                 name:"Lenovo Ideapad-3 Slim",
                 description:"Ryzan-7 9th Generation 1tb nvme-SSD 240HZ Display",
-                img:"/test.png"
+                img:"/images/logo/logo-icon2.svg"
             }, 
             {
                 id:3,
                 routerPath:"/",
                 name:"Dell inspirion",
                 description:"Ryzan-7 7th Generation 512Gb nvme-SSD 120HZ Display",
-                img:"/test.png"
+                img:"/images/logo/logo-icon2.svg"
             }
             
         ]

@@ -5,9 +5,6 @@ import { Carousel } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { bannerContent } from "@/data/bannerContent";
-import { CarouselRef } from "antd/es/carousel";
-import { useState, useRef } from "react";
-
 
 const BannerPage = () => {
   // const [currentSlide, setCurrentSlide] = useState(0);

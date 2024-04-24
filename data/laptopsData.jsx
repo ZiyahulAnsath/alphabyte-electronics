@@ -4,7 +4,13 @@ export const laptopDatas = [
     brand: "HP",
     name: "HP Pavilion x360",
     generation: "4",
-    images: ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"],
+    images: [
+      "/images/product/1.png",
+      "/images/product/2.png",
+      "/images/product/3.png",
+      "/images/product/4.png",
+      "/images/product/5.png",
+    ],
     body: [
       {
         dimension: "14.1 x 9.1 x 0.8 inches",
@@ -97,7 +103,13 @@ export const laptopDatas = [
     brand: "Dell",
     name: "Dell Inspiron 14",
     generation: "11th 1109G7",
-    images: ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"],
+    images: [
+      "/images/product/1.png",
+      "/images/product/2.png",
+      "/images/product/3.png",
+      "/images/product/4.png",
+      "/images/product/5.png",
+    ],
     body: [
       {
         dimension: "13.6 x 9.4 x 0.8 inches",
@@ -196,7 +208,13 @@ export const laptopDatas = [
     brand: "Lenovo",
     name: "Lenovo ThinkPad X1 Carbon",
     generation: "13th Gen",
-    images: ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"],
+    images: [
+      "/images/product/1.png",
+      "/images/product/2.png",
+      "/images/product/3.png",
+      "/images/product/4.png",
+      "/images/product/5.png",
+    ],
     body: [
       {
         dimension: "12.7 x 8.5 x 0.6 inches",
@@ -294,7 +312,13 @@ export const laptopDatas = [
     brand: "Asus",
     name: "Asus ROG Zephyrus G14",
     generation: "4th",
-    images: ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"],
+    images: [
+      "/images/product/1.png",
+      "/images/product/2.png",
+      "/images/product/3.png",
+      "/images/product/4.png",
+      "/images/product/5.png",
+    ],
     body: [
       {
         dimension: "12.8 x 8.7 x 0.7 inches",
@@ -391,7 +415,13 @@ export const laptopDatas = [
     brand: "Acer",
     name: "Acer Swift 3",
     generation: "6th",
-    images: ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"],
+    images: [
+      "/images/product/1.png",
+      "/images/product/2.png",
+      "/images/product/3.png",
+      "/images/product/4.png",
+      "/images/product/5.png",
+    ],
     body: [
       {
         dimension: "12.7 x 8.6 x 0.6 inches",

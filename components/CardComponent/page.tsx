@@ -1,14 +1,13 @@
 "use client";
-
-import { ShoppingCartIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import React from "react";
-import lgo1 from "@/public/1.png";
-import lgo2 from "@/public/2.png";
-import lgo3 from "@/public/3.png";
+import lgo1 from "@/public/images/product/1.png";
+import lgo2 from "@/public/images/product//2.png";
+import lgo3 from "@/public/images/product//3.png";
 import Link from "next/link";
+import { FaCartPlus } from "react-icons/fa";
 
-const CardComponent = ({ isInStock }) => {
+const CardComponent = ({ isInStock }:any) => {
   return (
     <>
       <div className="grid md:grid-cols-3 grid-cols-1 gap-2 md:gap-4 lg:gap-8">
@@ -48,7 +47,7 @@ const CardComponent = ({ isInStock }) => {
               </div>
               <div className="w-3/12 flex items-center justify-center">
                 <div className="card_icon rounded-full border p-3  hover:text-green-text">
-                  <ShoppingCartIcon className="h-6 w-6 " />
+                  <FaCartPlus className="h-6 w-6 " />
                 </div>
               </div>
             </div>
@@ -94,7 +93,7 @@ const CardComponent = ({ isInStock }) => {
               </div>
               <div className="w-3/12 flex items-center justify-center">
                 <div className="card_icon rounded-full border p-3  hover:text-green-text">
-                  <ShoppingCartIcon className="h-6 w-6 " />
+                  <FaCartPlus className="h-6 w-6 " />
                 </div>
               </div>
             </div>
@@ -140,7 +139,7 @@ const CardComponent = ({ isInStock }) => {
               </div>
               <div className="w-3/12 flex items-center justify-center">
                 <div className="card_icon rounded-full border p-3  hover:text-green-text">
-                  <ShoppingCartIcon className="h-6 w-6 " />
+                  <FaCartPlus className="h-6 w-6 " />
                 </div>
               </div>
             </div>

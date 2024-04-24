@@ -78,37 +78,37 @@ export const bannerContent=[
     {
         id:1,
         name:"Hp",
-        img:"/hp.svg",
+        img:"/images/brand/hp.svg",
         routerPath:"/product-category/laptops/hp",
     },
     {
         id:2,
         name:"Lenovo",
-        img:"/lenovo.svg",
+        img:"/images/brand/lenovo.svg",
         routerPath:"/product-category/laptops/lenovo",
     },
     {
         id:3,
         name:"Dell",
-        img:"/dell.svg",
+        img:"/images/brand/dell.svg",
         routerPath:"/product-category/laptops/dell",
     },
     {
         id:4,
         name:"Msi",
-        img:"/msi.svg",
+        img:"/images/brand/msi.svg",
         routerPath:"/product-category/laptops/msi",
     },
     {
         id:5,
         name:"Asus",
-        img:"/asus.svg",
+        img:"/images/brand/asus.svg",
         routerPath:"/product-category/laptops/asus",
     },
     {
         id:6,
         name:"Apple",
-        img:"/apple.svg",
+        img:"/images/brand/apple.svg",
         routerPath:"/product-category/laptops/apple",
     },
   ] 

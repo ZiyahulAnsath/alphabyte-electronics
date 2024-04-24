@@ -26,7 +26,7 @@ const DefaultHeader = () => {
         <div className="flex justify-between items-center h-full px-4 w-full">
           <div className="cursor-pointer mb-2 mt-1">
             <Link href={"/"}>
-              <Image src={"/logo/logo.svg"} alt="logo" width={200} height={100} />
+              <Image src={"/images/logo/logo.svg"} alt="logo" width={200} height={100} />
             </Link>
           </div>
           <ul className="flex gap-6 list-none cursor-pointer">
