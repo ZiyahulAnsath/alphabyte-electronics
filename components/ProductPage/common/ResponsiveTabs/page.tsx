@@ -1,14 +1,14 @@
 "use client";
-
-import { Bars3Icon, EyeIcon } from "@heroicons/react/16/solid";
-import { SplitCellsOutlined } from "@ant-design/icons";
 import Link from "next/link";
+import { HiMiniBars3 } from "react-icons/hi2";
+import { IoEyeOutline } from "react-icons/io5";
+import { MdOutlineCompare } from "react-icons/md";
 
 
 const tabs = [
-  { id: "specification", label: "Specification", icon: Bars3Icon },
-  { id: "review", label: "Review", icon: EyeIcon },
-  { id: "compare", label: "Compare", icon: SplitCellsOutlined },
+  { id: "specification", label: "Specification", icon: HiMiniBars3 },
+  { id: "review", label: "Review", icon: IoEyeOutline },
+  { id: "compare", label: "Compare", icon: MdOutlineCompare },
 ];
 
 const ResponsiveTabs = ({activeTab, setActiveTab}:any) => {
@@ -17,7 +17,6 @@ const ResponsiveTabs = ({activeTab, setActiveTab}:any) => {
     setActiveTab(tabId);
   };
 
-  
 
   return (
     <>

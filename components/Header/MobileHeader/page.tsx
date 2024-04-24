@@ -1,15 +1,11 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import {
-  DevicePhoneMobileIcon,
-  MagnifyingGlassIcon,
-  ShoppingCartIcon,
-  XCircleIcon,
-} from "@heroicons/react/16/solid";
 import { Badge } from "antd";
+import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import { FaCartPlus } from "react-icons/fa6";
+import { IoSearch } from "react-icons/io5";
 
 const links = ["Home", "Categories", "Services", "Gallery", "Contact"];
 
@@ -24,9 +20,9 @@ export default function MobileMenu() {
     <>
       {/* Mobile Menu */}
 
-      <div className="md:block lg:hidden">
+      <div className="sm:block md:hidden">
         <div className="flex gap-2 items-center w-full justify-center min-h-12">
-          <DevicePhoneMobileIcon className="h-6 w-6 text-green-text" />
+          <HiOutlineDevicePhoneMobile className="h-6 w-6 text-green-text" />
 
           <Link
             href={"#"}
@@ -39,7 +35,7 @@ export default function MobileMenu() {
           <div className="relative">
             <Badge count={5} className=" absolute ">
               <div className="rounded-2xl p-2 bg-green-text">
-                <ShoppingCartIcon className="h-8 w-8 text-gray-950 pt-1" />
+                <FaCartPlus className="h-8 w-8 text-gray-950 pt-1" />
               </div>
             </Badge>
             <div className="flex flex-wrap ml-16">
@@ -51,16 +47,16 @@ export default function MobileMenu() {
           </div>
 
           <div className="glossy_icon hover:text-green-text ">
-            <MagnifyingGlassIcon className="h-6 w-6 text-gray-text hover:text-green-text" />
+            <IoSearch className="h-6 w-6 text-gray-text hover:text-green-text" />
           </div>
         </div>
         <div>
           <div>
             <div className="flex justify-between items-center px-5 shadow-sm shadow-blue-100">
-              <div>
+              <div className="mb-2">
                 {" "}
                 <Link href={"/"}>
-                  <Image src={"/test.png"} alt="logo" width={60} height={60} />
+                  <Image src={"/logo/logo.svg"} alt="logo" width={150} height={100} />
                 </Link>
               </div>
               <div>

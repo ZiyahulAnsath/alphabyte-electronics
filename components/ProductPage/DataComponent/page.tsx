@@ -9,7 +9,6 @@ const DataComponent = ({ laptop}:any) => {
   return (
     <>
       <div>
-        {/* <h1 className="text-3xl text-green-text md:-mt-20 mt-0">{laptop?.name}</h1> */}
         <h1 className="text-3xl text-green-text">{laptop?.name}</h1>
         <ul className="list-disc pl-4">
           <li className="text-sm text-gray-text">

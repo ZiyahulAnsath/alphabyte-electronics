@@ -4,7 +4,15 @@ import { Carousel, Image } from "antd";
 import { CarouselRef } from "antd/es/carousel";
 import { useState, useRef } from "react";
 
-const ImageComponent = ({laptop}) => {
+interface Laptop {
+  id: number;
+  brand: string;
+  name: string;
+  generation: string;
+  images: string[];
+}
+
+const ImageComponent = ({ laptop }: { laptop: Laptop }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<CarouselRef>(null);
 
@@ -30,21 +38,11 @@ const ImageComponent = ({laptop}) => {
             ref={carouselRef}
             dots={false}
           >
-            <div className="flex justify-center">
-              <Image src="/1.png" alt="image1" width={400} />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/2.png" alt="image2" width={400} />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/3.png" alt="image3" width={400} />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/4.png" alt="image4" width={400} />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/5.png" alt="image5" width={400} />
-            </div>
+            {laptop.images.map((image, index) => ( // Map over images from laptop prop
+              <div key={index} className="flex justify-center">
+                <Image src={image} alt={`image${index + 1}`} width={400} />
+              </div>
+            ))}
           </Carousel>
         </div>
 
@@ -59,7 +57,7 @@ const ImageComponent = ({laptop}) => {
               }`}
               onClick={() => handleSilhouetteClick(index)}
             >
-              <Image src={`/${index + 1}.png`} width={50} preview={false} />
+              <Image src={laptop.images[index]} width={50} preview={false} />
             </div>
           ))}
         </div>

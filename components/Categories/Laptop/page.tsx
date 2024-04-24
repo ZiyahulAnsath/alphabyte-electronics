@@ -1,15 +1,13 @@
 "use client";
 import FillterCardComponent from "@/components/CardComponent/FillterCardComponent/page";
-import Categories from "@/components/Categories/page";
 import FillterHeading from "@/components/FillterComponent/Common/FillterHeading/page";
 import FillterComponent from "@/components/FillterComponent/page";
-import Footer from "@/components/Footer/page";
-import Header from "@/components/Header/page";
 import { ArrowLeftIcon, Bars3BottomRightIcon } from "@heroicons/react/16/solid";
-import Link from "next/link";
 import React, { useState } from "react";
+import { FaArrowLeft } from "react-icons/fa6";
+import { HiMiniBars3 } from "react-icons/hi2";
 
-const Category = () => {
+const Laptop = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,15 +16,8 @@ const Category = () => {
   const isInStock = true;
   return (
     <>
-      <Header />
-      {/* End Main Header */}
-
       <div className="flex flex-row gap-3">
-        <div className="hidden lg:block basis-1/6">
-          <Categories />
-        </div>
-
-        <div className="w-full px-5 lg:px-2">
+        <div className="w-full">
           <FillterHeading />
           <div className="flex flex-row gap-3 py-5 ">
             <div className="basis-1/6 border-r-2 border-green-text  ">
@@ -51,11 +42,11 @@ const Category = () => {
                   >
                     {isOpen ? (
                       <>
-                        <ArrowLeftIcon className="w-8 h-8 hover:text-green-text ease-in-out duration-150" />
+                        <FaArrowLeft className="w-8 h-8 hover:text-green-text ease-in-out duration-150" />
                       </>
                     ) : (
                       <>
-                        <Bars3BottomRightIcon className="w-8 h-8 hover:text-green-text ease-in-out duration-150" />
+                        <HiMiniBars3 className="w-8 h-8 hover:text-green-text ease-in-out duration-150" />
                       </>
                     )}
                   </div>
@@ -75,11 +66,8 @@ const Category = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
-      {/* End Footer */}
     </>
   );
 };
 
-export default Category;
+export default Laptop;

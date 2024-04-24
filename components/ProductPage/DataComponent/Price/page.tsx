@@ -1,4 +1,4 @@
-const Price = ({ laptop, quantity, setQuantity }) => {
+const Price = ({ laptop, quantity, setQuantity }:any) => {
   //   const handleQuantityChange = (e) => {
   //     const newQuantity = parseInt(e.target.value, 10);
   //     setQuantity(newQuantity);
