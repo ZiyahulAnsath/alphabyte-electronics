@@ -1,8 +1,8 @@
 "use client";
-import { TrashIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import React, { useState } from "react";
-import lgo1 from "@/public/pixel.jpg";
+import lgo1 from "@/public/images/brand/apple.svg";
+import { BsTrash3 } from "react-icons/bs";
 
 const MobileCartTable = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
@@ -66,7 +66,7 @@ const MobileCartTable = () => {
                   //   onClick={() => handleDeleteRow(record.key)}
                 >
                   Delete
-                  <TrashIcon className="w-4 h-4 hover:h-6 hover:" />
+                  <BsTrash3 className="w-4 h-4 hover:h-6 hover:" />
                 </button>
               </div>
               <div className="flex gap-3">

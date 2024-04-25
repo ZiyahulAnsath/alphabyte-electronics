@@ -22,7 +22,7 @@ const BrandPage = () => {
                 height={80}
               />
             </div>
-            <div>{brand.name}</div>
+            <div className="text-grey-text">{brand.name}</div>
           </Link>
         ))}
       </div>

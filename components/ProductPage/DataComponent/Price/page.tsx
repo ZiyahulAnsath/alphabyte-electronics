@@ -24,23 +24,23 @@ const Price = ({ laptop, quantity, setQuantity }:any) => {
   };
   return (
     <>
-      <div className="flex gap-5 items-center mb-3 flex-nowrap">
+      <div className="flex gap-5 items-center mb-3 flex-nowrap text-grey-text">
         <div>Quantity:</div>
         <button
           onClick={handleDecrease}
-          className="px-2 py-1 border border-gray-text rounded-md hover:bg-gray-bg_primary hover:text-green-text"
+          className="px-2 py-1 border border-grey-text rounded-md hover:bg-grey-bg_primary hover:text-green-text"
         >
           -
         </button>
         <span className=" font-extrabold">{quantity}</span>
         <button
           onClick={handleIncrease}
-          className="px-2 py-1 border border-gray-text rounded-md hover:bg-gray-bg_primary hover:text-green-text"
+          className="px-2 py-1 border border-grey-text rounded-md hover:bg-grey-bg_primary hover:text-green-text"
         >
           +
         </button>
       </div>
-      <h6 className="text-xs text-gray-text">Minimum Quantity 1 Maximum Quantity 10</h6>
+      <h6 className="text-xs text-grey-text">Minimum Quantity 1 Maximum Quantity 10</h6>
 
       <p className="text-3xl text-green-text font-bold">
         <span>{laptop?.misc[0]?.price} LKR</span>

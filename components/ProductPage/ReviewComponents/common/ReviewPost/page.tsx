@@ -35,7 +35,7 @@ const ReviewPost = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-text"
+                  className="block text-sm font-medium text-grey-text"
                 >
                   Name
                 </label>
@@ -47,7 +47,7 @@ const ReviewPost = () => {
                   name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="mt-1 p-2 w-full rounded-md focus:outline-none focus-blue-500 bg-transparent border text-white border-gray-text"
+                  className="mt-1 p-2 w-full rounded-md focus:outline-none focus-blue-500 bg-transparent border text-white border-grey-text"
                   required
                 />
               </div>
@@ -57,7 +57,7 @@ const ReviewPost = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-text"
+                  className="block text-sm font-medium text-grey-text"
                 >
                   Email
                 </label>
@@ -69,7 +69,7 @@ const ReviewPost = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 p-2 w-full rounded-md focus:outline-none focus-blue-500 bg-transparent border text-white border-gray-text"
+                  className="mt-1 p-2 w-full rounded-md focus:outline-none focus-blue-500 bg-transparent border text-white border-grey-text"
                   required
                 />
               </div>
@@ -79,7 +79,7 @@ const ReviewPost = () => {
               <div>
                 <label
                   htmlFor="rating"
-                  className="block text-sm font-medium text-gray-text"
+                  className="block text-sm font-medium text-grey-text"
                 >
                   Rating
                 </label>
@@ -97,7 +97,7 @@ const ReviewPost = () => {
               <div>
                 <label
                   htmlFor="review"
-                  className="block text-sm font-medium text-gray-text"
+                  className="block text-sm font-medium text-grey-text"
                 >
                   Review
                 </label>
@@ -109,7 +109,7 @@ const ReviewPost = () => {
                   rows={4}
                   value={review}
                   onChange={(e) => setReview(e.target.value)}
-                  className="mt-1 p-2 w-full rounded-md focus:outline-none focus-blue-500 text-gray-text bg-transparent border border-gray-text"
+                  className="mt-1 p-2 w-full rounded-md focus:outline-none focus-blue-500 text-grey-text bg-transparent border border-grey-text"
                   required
                 ></textarea>
               </div>
@@ -118,7 +118,7 @@ const ReviewPost = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="text-xl bg-gray-bg_primary font-bold hover:text-green-text hover:font-semibold ease-linear duration-300 border-none hover:bg-gray-bg_primary px-5 py-1.5 rounded-md "
+                className="text-xl bg-grey-bg_primary font-bold hover:text-green-text hover:font-semibold ease-linear duration-300 border-none hover:bg-grey-bg_primary px-5 py-1.5 rounded-md "
               >
                 Add Review
               </button>

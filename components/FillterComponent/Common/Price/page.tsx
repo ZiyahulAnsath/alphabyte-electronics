@@ -24,7 +24,6 @@ const Price = () => {
         step={1000}
         defaultValue={[1000, 200000]}
         onChange={handleSliderChange}
-        className="w-100"
         styles={{
           rail: { backgroundColor: "lightgray" },
           track: { backgroundColor: "green" },

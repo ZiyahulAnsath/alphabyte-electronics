@@ -26,14 +26,14 @@ const ResponsiveTabs = ({activeTab, setActiveTab}:any) => {
           href={`#${tab.id}`}
           className={`flex w-1/3 items-center justify-center h-10 rounded ${
             activeTab === tab.id
-              ? "bg-gray-bg_primary text-green-text border-green-text border-2"
-              : "border border-green-text hover:border-green-text hover:border-2 hover:bg-gray-bg_primary hover:text-green-text"
+              ? "bg-grey-bg_primary text-green-text border-green-text border-2"
+              : "border border-green-text hover:border-green-text hover:border-2 hover:bg-grey-bg_primary hover:text-green-text text-grey-text"
           }`}
           onClick={() => handleTabClick(tab.id)}
         >
           <div className="flex flex-nowrap gap-2">
             <tab.icon className="h-6 w-6" />
-            <h2 className="text-sm">{tab.label}</h2>
+            <h2 className="text-sm ">{tab.label}</h2>
           </div>
         </Link>
       ))}

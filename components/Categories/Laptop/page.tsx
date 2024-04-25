@@ -2,7 +2,6 @@
 import FillterCardComponent from "@/components/CardComponent/FillterCardComponent/page";
 import FillterHeading from "@/components/FillterComponent/Common/FillterHeading/page";
 import FillterComponent from "@/components/FillterComponent/page";
-import { ArrowLeftIcon, Bars3BottomRightIcon } from "@heroicons/react/16/solid";
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { HiMiniBars3 } from "react-icons/hi2";

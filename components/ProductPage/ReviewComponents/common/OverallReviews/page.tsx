@@ -22,7 +22,7 @@ const OverallReviews = () => {
         <div className="grid gap-3">
           {laptopsReviews.slice(0, visibleItems).map((item, index) => (
             <div
-              className="grid grid-cols-8 gap-1 border-gray-text border rounded-md md:p-4 p-2 hover:bg-green-li_background-main ease-in-out duration-300"
+              className="grid grid-cols-8 gap-1 border-grey-text border rounded-md md:p-4 p-2 hover:bg-green-li_background-main ease-in-out duration-300"
               key={index}
             >
               <div className="col-span-6">
@@ -37,7 +37,7 @@ const OverallReviews = () => {
               <div className="col-span-2 mx-auto md:text-sm text-xs">
                 {item.date} <span>{item.time}</span>
               </div>
-              <div className=" col-span-full md:col-span-6 text-sm md:pr-12 pr-0 text-gray-text">
+              <div className=" col-span-full md:col-span-6 text-sm md:pr-12 pr-0 text-grey-text">
                 {item.description}
               </div>
               <div className=" col-span-full md:col-span-2 md:mx-auto text-end text-xs">
@@ -51,7 +51,7 @@ const OverallReviews = () => {
           <div className="mt-4 text-center">
             {/* <LoadMoreButton onLoadMore={handleLoadMore} loading={loading} /> */}
             <button
-              className={`text-lg font-semibold hover:text-gray-bg_primary hover:ring-gray-bg_primary hover:font-bold ease-linear duration-300 ring-2 ring-green-text text-green-text hover:bg-green-text px-5 py-1.5 rounded-full  ${
+              className={`text-lg font-semibold hover:text-grey-bg_primary hover:ring-grey-bg_primary hover:font-bold ease-linear duration-300 ring-2 ring-green-text text-green-text hover:bg-green-text px-5 py-1.5 rounded-full  ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               onClick={handleLoadMore}

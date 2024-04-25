@@ -49,13 +49,13 @@ const BannerPage = () => {
                     <span className=" text-green-text">{product.gen}</span>{" "}
                     PROCESSOR{" "}
                   </h1>
-                  <h6 className=" text-xs md:text-sm mb-7 text-gray-text font-raleway md:mr-0 mr-8">
+                  <h6 className=" text-xs md:text-sm mb-7 text-grey-text font-raleway md:mr-0 mr-8">
                     {product.description}
                   </h6>
                   <div className="pb-4 text-center md:text-left">
                     <Link
                       href={"/"}
-                      className=" text-xl bg-green-text font-bold hover:text-green-text hover:font-semibold ease-linear duration-300 border-none hover:bg-gray-bg_primary px-5 py-1.5 rounded-md"
+                      className=" text-xl bg-green-text font-bold hover:text-green-text hover:font-semibold ease-linear duration-300 border-none hover:bg-grey-bg_primary px-5 py-1.5 rounded-md"
                     >
                       View
                     </Link>

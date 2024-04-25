@@ -21,10 +21,10 @@ const FillterCardComponent = ({ isInStock }: any) => {
                   borderRadius: "25px 25px 0px 0px",
                 }}
               />
-              <div className="border-b-4 border-gray-bg_primary"></div>
+              <div className="border-b-4 border-grey-bg_primary"></div>
               <div className="absolute top-0 px-5 py-5">
                 <div
-                  className={`rounded-full px-5 py-2 text-xs bg-gray-bg_primary ${
+                  className={`rounded-full px-5 py-2 text-xs bg-grey-bg_primary ${
                     isInStock ? "text-green-text" : " text-red-500"
                   }`}
                 >
@@ -35,20 +35,20 @@ const FillterCardComponent = ({ isInStock }: any) => {
             <div className="px-3 py-5 ">
               <div className="flex flex-row gap-3 items-center">
                 <div className="w-10/12">
-                  <h3 className="hover:text-green-text  hover:underline ease-in-out duration-700">
+                  <h3 className="hover:text-green-text  text-grey-text hover:underline ease-in-out duration-700">
                     {data.name}
                   </h3>
                 </div>
                 <div className="w-3/12 flex items-center justify-center">
-                  <div className="card_icon rounded-full border p-3  hover:text-green-text">
+                  <div className="card_icon rounded-full border p-3  text-grey-text hover:text-green-text">
                     <FaCartPlus className="h-5 w-5 " />
                   </div>
                 </div>
               </div>
-              <h3 className="text-green-text text-base font-extralight">
+              <h3 className="text-green-text text-base  text-grey-textfont-extralight">
                 Laptop
               </h3>
-              <h3 className="text-2xl">{data.misc[0].price} LKR</h3>
+              <h3 className="text-2xl text-grey-text">{data.misc[0].price} LKR</h3>
             </div>
           </div>
         </Link>

@@ -1,5 +1,6 @@
 "use client";
 import DefaultMainLayout from "@/components/Layouts/DefaultMainLayout/page";
+import ProductNotFound from "@/components/NotFound/ProductNotFound/page";
 import ResponsiveTabs from "@/components/ProductPage/common/ResponsiveTabs/page";
 import SpecificationComponents from "@/components/ProductPage/common/SpecificationComponents/page";
 import DataComponent from "@/components/ProductPage/DataComponent/page";
@@ -48,7 +49,11 @@ const ProductDetails = ({
   );
 
   if (!laptop) {
-    return <div>Loading...</div>;
+    return <>
+    <DefaultMainLayout>
+      <ProductNotFound/>
+    </DefaultMainLayout>
+    </>
   }
 
   const [activeTab, setActiveTab] =

@@ -7,7 +7,7 @@ export default function Posts() {
     <>
       {footerPosts.map((item, i) => (
         <div key={i}>
-          <h5 className=" text-xs md:text-base mb-3 md:mb-7 font-bold tracking-widest underline underline-offset-8 decoration-green-text">{item.title}</h5>
+          <h5 className=" text-xs md:text-base mb-3 md:mb-7 text-grey-text font-bold tracking-widest underline underline-offset-8 decoration-green-text">{item.title}</h5>
           {item.postData.map((posts) => (
             <div className="flex flex-col pb-3" key={posts.id}>
               <div className="flex items-center">
@@ -21,7 +21,7 @@ export default function Posts() {
                         {posts.name}
                       </h5>
                     </Link>
-                    <p className="text-[10px] md:text-xs text-gray-text">
+                    <p className="text-[10px] md:text-xs text-grey-text">
                       {posts.description}
                     </p>
                   </div>

@@ -6,7 +6,7 @@ const ReviewComponents = ({laptop}:any) => {
     // console.log(laptop?.name);
   return (
     <>
-      <div className="px-5 py-5">
+      <div className="px-5 py-5 text-grey-text">
         <h1 className="text-2xl">Customer Reviews (100)</h1>
         <div className="flex flex-row md:flex-nowrap flex-wrap gap-5">
           <div className="md:basis-1/2 basis-full">

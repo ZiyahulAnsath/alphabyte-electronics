@@ -10,7 +10,24 @@ import { FaCartPlus } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 
-const Links = ["Home", "Services", "Gallery", "Contact"];
+const Links = [
+  {
+    menuName: "Home",
+    path: "/",
+  },
+  {
+    menuName: "Services",
+    path: "/services",
+  },
+  {
+    menuName: "Gallery",
+    path: "/gallery",
+  },
+  {
+    menuName: "Contact",
+    path: "/contact",
+  },
+];
 
 const DefaultHeader = () => {
   const router = useRouter();
@@ -20,7 +37,7 @@ const DefaultHeader = () => {
   };
 
   return (
-    <nav className="w-full shadow-sm shadow-gray-500 mb-5">
+    <nav className="w-full shadow-sm shadow-gray-500 mb-2">
       {/* Desktop Menu */}
       <div className="hidden md:block">
         <div className="flex justify-between items-center h-full px-4 w-full">
@@ -30,13 +47,14 @@ const DefaultHeader = () => {
             </Link>
           </div>
           <ul className="flex gap-6 list-none cursor-pointer">
-            {Links.map((link) => (
-              <li key={link}>
+            {Links.map((link,index) => (
+              <li key={index}>
                 <Link
-                  href={link.toLowerCase()}
-                  className="text-lg text-gray-text hover:text-green-text hover:font-semibold active:text-green-text focus:text-green-00"
+                  href={link.path}
+                  passHref 
+                  className={`text-lg text-grey-text hover:text-green-text hover:font-semibold active:text-green-text focus:text-green-00 `}
                 >
-                  {link}
+                  {link.menuName}
                 </Link>
               </li>
             ))}
@@ -47,7 +65,7 @@ const DefaultHeader = () => {
               <HiOutlineDevicePhoneMobile className="h-7 w-7 text-green-text" />
               <Link
                 href={"#"}
-                className="hover:text-green-text hover:font-semibold"
+                className="hover:text-green-text hover:font-semibold text-grey-text" 
               >
                 +94 777777777
               </Link>

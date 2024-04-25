@@ -21,11 +21,11 @@ const ReviewItem = ({ defaultValue, percent, count }: any) => (
 const ReviewDetail = () => (
   <>
     <div className="flex md:basis-1/2 basis-full">
-      <div className="flex flex-col items-center justify-center border border-gray-text rounded-xl py-4 px-10">
+      <div className="flex flex-col items-center justify-center border border-grey-text rounded-xl py-4 px-10">
         <h1 className="text-3xl text-green-text font-bold">
           <span>4.5</span>
         </h1>
-        <h4 className="text-sm">Out of 5</h4>
+        <h4 className="text-sm text-grey-text">Out of 5</h4>
         <Rate defaultValue={3} allowHalf disabled />
       </div>
     </div>

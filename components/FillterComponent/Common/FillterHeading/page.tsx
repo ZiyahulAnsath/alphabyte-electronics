@@ -10,7 +10,7 @@ const FillterHeading = () => {
           <div>
             <Link
               href={"/"}
-              className=" text-gray-text hover:text-green-text hover:font-semibold ease-in-out duration-500 border-none hover:ring-green-text  ring-2 px-4 ring-gray-text py-2 hover:bg-transparent rounded-full text-[14px] "
+              className=" text-grey-text hover:text-green-text hover:font-semibold ease-in-out duration-500 border-none hover:ring-green-text  ring-2 px-4 ring-grey-text py-2 hover:bg-transparent rounded-full text-[14px] "
             >
               All
             </Link>
@@ -18,7 +18,7 @@ const FillterHeading = () => {
           <div>
             <Link
               href={"/"}
-              className=" text-gray-text hover:text-green-text hover:font-semibold ease-in-out duration-500 border-none hover:ring-green-text  ring-2 px-4 ring-gray-text py-2 hover:bg-transparent rounded-full text-[14px] "
+              className=" text-grey-text hover:text-green-text hover:font-semibold ease-in-out duration-500 border-none hover:ring-green-text  ring-2 px-4 ring-grey-text py-2 hover:bg-transparent rounded-full text-[14px] "
             >
               Special offer
             </Link>
@@ -26,7 +26,7 @@ const FillterHeading = () => {
           <div>
             <Link
               href={"/"}
-              className=" text-gray-text hover:text-green-text hover:font-semibold ease-in-out duration-500 border-none hover:ring-green-text  ring-2 px-4 ring-gray-text py-2 hover:bg-transparent rounded-full text-[14px] "
+              className=" text-grey-text hover:text-green-text hover:font-semibold ease-in-out duration-500 border-none hover:ring-green-text  ring-2 px-4 ring-grey-text py-2 hover:bg-transparent rounded-full text-[14px] "
             >
               New Arrivals
             </Link>

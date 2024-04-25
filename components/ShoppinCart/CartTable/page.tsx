@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Table } from "antd";
 import Image from "next/image";
-import { TrashIcon } from "@heroicons/react/16/solid";
-import lgo1 from "@/public/pixel.jpg";
+import lgo1 from "@/public/images/brand/apple.svg";
 import CartDetailsPopup from "./CartDetailsPopup/page";
 import MobileCartTable from "./MobileCartTable/page";
+import { BsTrash3 } from "react-icons/bs";
 
 const CartTable = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -110,10 +110,10 @@ const CartTable = () => {
       dataIndex: "action",
       render: (_: any, record: any) => (
         <button
-          className="flex items-center gap-2 font-bold border-transparent rounded-lg px-1.5 py-1 uppercase tracking-wider text-red-800 bg-red-200 hover:px-2 hover:py-2"
+          className="flex items-center gap-2 font-bold border-transparent rounded-lg hover:text-red-200 hover:bg-red-800 uppercase tracking-wider text-red-800 bg-red-200 px-2 py-2"
           onClick={() => handleDeleteRow(record.key)}
         >Delete
-          <TrashIcon className="w-6 h-6"/>
+          <BsTrash3 className="w-6 h-6"/>
         </button>
       ),
     },

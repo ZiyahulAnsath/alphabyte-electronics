@@ -31,7 +31,7 @@ const FillterComponent = () => {
                 <div className="flex flex-col" key={data.id}>
                   <Checkbox
                     onChange={(e) => onChange(e, data.name)}
-                    className="text-gray-text font-semibold pb-2 hover:font-bold hover:text-green-text hover:pl-2 hover:ease-in-out duration-500`"
+                    className="text-grey-text font-semibold pb-2 hover:font-bold hover:text-green-text hover:pl-2 hover:ease-in-out duration-500`"
                   >
                     {data.name}
                   </Checkbox>
