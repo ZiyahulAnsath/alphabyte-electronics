@@ -4,15 +4,14 @@ import AddNewProduct from "@/components/Product/SaveProduct/page";
 
 
 export const metadata: Metadata = {
-  title: "Add Laptop | Alphabyte Electronics",
+  title: "Add Products | Alphabyte Electronics",
 };
-
-const AddNewLaptopPage = () => {
+const AddProductsPage = () => {
   return (
     <DefaultLayout>
-        <AddNewProduct/>
+      <AddNewProduct/>
     </DefaultLayout>
   )
 }
 
-export default AddNewLaptopPage
+export default AddProductsPage

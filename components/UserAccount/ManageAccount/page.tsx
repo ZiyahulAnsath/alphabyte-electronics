@@ -88,7 +88,7 @@ const ManageAccount = () => {
             Print Data
           </Link>
           <Link
-            href={'/user_account/user_add'}
+            href={'/dashboard/user_account/user_add'}
             className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-lg text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-10"
           >
             <GoArrowUpRight className="h-5 w-5 " />

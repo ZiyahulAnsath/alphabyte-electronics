@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { BiUser } from "react-icons/bi";
 import { CiLock, CiMail } from "react-icons/ci";
+import Header from "@/components/Header/page";
 
 export const metadata: Metadata = {
   title: "SignUp Page | Alphabyte Electronics",
@@ -13,7 +14,10 @@ export const metadata: Metadata = {
 const SignUp: React.FC = () => {
   return (
     <>
-      <div className="px-10 md:px-40 md:py-10">
+      {/* <!-- ===== Header Start ===== --> */}
+      <Header />
+      {/* <!-- ===== Header End ===== --> */}
+      <div className="px-10 md:px-40 md:py-10 bg-grey-bg_primary min-h-screen">
         <div className="rounded-lg border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <div className="flex flex-wrap items-center">
             <div className="hidden w-full xl:block xl:w-1/2">

@@ -68,12 +68,12 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
 
           {/* Menu Item Laptop */}
           {generateSidebarLinkGroup(
-            "Laptops",
+            "products",
             <PiLaptopLight className="h-5 w-5 text-blue-300 dark:text-meta-3" />,
-            "/dashboard/laptops",
+            "/dashboard/products",
             [
-              { label: "Add Laptop", path: "/dashboard/laptops/laptop-add" },
-              { label: "Manage Laptop", path: "/dashboard/laptops/laptop-manage" },
+              { label: "Add Product", path: "/dashboard/products/add_product" },
+              { label: "Manage Product", path: "/dashboard/products/manage_products" },
             ],
           )}
           {/* End Menu Item Laptop */}

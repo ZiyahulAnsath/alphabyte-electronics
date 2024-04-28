@@ -6,26 +6,32 @@ const CategoryDatalist = [
   {
     id: 1,
     name: "Laptop",
+    imageUrl: "//////////////////////////////////////////",
   },
   {
     id: 2,
     name: "Desktop",
+    imageUrl: "//////////////////////////////////////////",
   },
   {
     id: 3,
     name: "Gaming Desktop",
+    imageUrl: "//////////////////////////////////////////",
   },
   {
     id: 4,
     name: "Storage",
+    imageUrl: "//////////////////////////////////////////",
   },
   {
     id: 5,
     name: "Power Supply",
+    imageUrl: "//////////////////////////////////////////",
   },
   {
     id: 6,
     name: "Graphics Card",
+    imageUrl: "//////////////////////////////////////////",
   },
 ];
 
@@ -44,6 +50,9 @@ const CategoryData = () => {
                 <th className="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
                   Category Name
                 </th>
+                <th className="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
+                  Image Url
+                </th>
                 <th className="px-4 py-4 font-medium text-black dark:text-white">
                   Actions
                 </th>
@@ -60,6 +69,11 @@ const CategoryData = () => {
                   <td className="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
                     <h5 className="font-medium text-black dark:text-white">
                       {data.name}
+                    </h5>
+                  </td>
+                  <td className="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
+                    <h5 className="font-medium text-black dark:text-white">
+                      {data.imageUrl}
                     </h5>
                   </td>
                   <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">

@@ -1,13 +1,16 @@
-import Categories from "@/components/Categories/page";
+'use client'
 import Footer from "@/components/Footer/page";
 import Header from "@/components/Header/page";
+import UserDashboardSidebar from "@/components/Sidebar/UserDashboardSidebar/page";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-const DefaultMainLayout = ({ children }: { children: React.ReactNode }) => {
+const UserAccountLayout = ({ children }: { children: React.ReactNode }) => {
+    const pathname = usePathname();
   return (
     <>
       {/* <!-- ===== Page Wrapper Start ===== --> */}
-      <div className="flex h-screen overflow-hidden bg-grey-bg_primary">
+      <div className="flex min-h-screen overflow-hidden bg-grey-bg_primary">
         {/* <!-- ===== Content Area Start ===== --> */}
         <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           {/* <!-- ===== Header Start ===== --> */}
@@ -15,14 +18,14 @@ const DefaultMainLayout = ({ children }: { children: React.ReactNode }) => {
           {/* <!-- ===== Header End ===== --> */}
 
           {/* <!-- ===== Main Content Start ===== --> */}
-          <main className="flex-1">
+          <main className="flex-1 min-h-screen px-20 py-25">
             <div className="md:flex">
               {/* <!-- ===== Sidebar Start ===== --> */}
-              <div className="hidden md:block md:w-1/4 lg:w-1/6 ">
-                <Categories />
+              <div className="hidden md:block md:w-2/5 lg:w-1/5 border-r-2">
+                <UserDashboardSidebar pathname={pathname}/>
               </div>
               {/* <!-- ===== Sidebar End ===== --> */}
-              <div className="w-full md:w-3/4 lg:w-5/6 md:pl-4 lg:px-6 md:px-0 px-4">{children}</div>
+              <div className="w-full md:w-3/5 lg:w-4/5 md:pl-4 lg:px-6 md:px-0 px-4">{children}</div>
             </div>
           </main>
           {/* <!-- ===== Main Content End ===== --> */}
@@ -38,5 +41,5 @@ const DefaultMainLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default DefaultMainLayout;
+export default UserAccountLayout;
 

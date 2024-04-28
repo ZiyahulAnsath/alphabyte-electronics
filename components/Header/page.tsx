@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Badge } from "antd";
-import { useRouter } from "next/navigation";
 import MobileMenu from "./MobileHeader/page";
-import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { FaCartPlus } from "react-icons/fa6";
-import { IoSearch } from "react-icons/io5";
+import { FaCartPlus } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
+import DropdownUserAccount from "./DropdownUserAccount";
+import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import { IoSearch } from "react-icons/io5";
+
 
 const Links = [
   {
@@ -30,29 +31,49 @@ const Links = [
 ];
 
 const DefaultHeader = () => {
-  const router = useRouter();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
 
-  const handleCart = () => {
-    router.push("/cart");
+  // Effect to check if user is already logged in when component mounts
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  // Function to handle user logout
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token from localStorage
+    setIsLoggedIn(false); // Set isLoggedIn to false
+    // navigate("/"); // Redirect to home page after logout
+    // toast("Logged out from application!", {
+    //   icon: "😔",
+    // });
   };
 
   return (
-    <nav className="w-full shadow-sm shadow-gray-500 mb-2">
+    <nav className="w-full bg-grey-bg_primary shadow-md">
       {/* Desktop Menu */}
       <div className="hidden md:block">
-        <div className="flex justify-between items-center h-full px-4 w-full">
-          <div className="cursor-pointer mb-2 mt-1">
+        <div className="flex h-full w-full items-center justify-between px-4">
+          <div className="mb-2 mt-1 cursor-pointer">
             <Link href={"/"}>
-              <Image src={"/images/logo/logo.svg"} alt="logo" width={200} height={100} />
+              <Image
+                src={"/images/logo/logo.svg"}
+                alt="logo"
+                width={200}
+                height={100}
+              />
             </Link>
           </div>
-          <ul className="flex gap-6 list-none cursor-pointer">
-            {Links.map((link,index) => (
+          <ul className="flex cursor-pointer list-none gap-6">
+            {Links.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.path}
-                  passHref 
-                  className={`text-lg text-grey-text hover:text-green-text hover:font-semibold active:text-green-text focus:text-green-00 `}
+                  passHref
+                  className={`focus:text-green-00 text-lg text-grey-text hover:font-semibold hover:text-green-text active:text-green-text `}
                 >
                   {link.menuName}
                 </Link>
@@ -60,27 +81,63 @@ const DefaultHeader = () => {
             ))}
           </ul>
 
-          <div className="flex gap-5 items-center">
-            <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-5">
+            <div className="flex items-center gap-2">
               <HiOutlineDevicePhoneMobile className="h-7 w-7 text-green-text" />
               <Link
                 href={"#"}
-                className="hover:text-green-text hover:font-semibold text-grey-text" 
+                className="text-grey-text hover:font-semibold hover:text-green-text"
               >
-                +94 777777777
+                +94 758412456
               </Link>
             </div>
-            <div className="flex gap-5 items-center">
+            <div className="flex items-center gap-5">
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="flex items-center gap-4"
+                    href="#"
+                  >
+                    <span className="hidden text-right lg:block">
+                      <span className="block text-sm font-medium">
+                        Ziyahul Ansath
+                      </span>
+                    </span>
+
+                    <span className="h-12 w-12 rounded-full">
+                      <Image
+                        width={112}
+                        height={112}
+                        src={"/images/user/user-01.png"}
+                        style={{
+                          width: "auto",
+                          height: "auto",
+                        }}
+                        alt="User"
+                      />
+                    </span>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link href={"/auth/signin"}>
+                    <div className="glossy_icon hover:text-green-text">
+                      <FaRegUser className="h-5 w-5" />
+                    </div>
+                  </Link>
+                </>
+              )}
+
+              <Link href={"/cart"}>
+                <Badge count={10} color="green">
+                  <div className="glossy_icon hover:text-green-text">
+                    <FaCartPlus className="h-5 w-5" />
+                  </div>
+                </Badge>
+              </Link>
               <div className="glossy_icon hover:text-green-text">
-                <FaRegUser className="h-5 w-5" />
-              </div>
-              <Badge count={10} color="green">
-                <div className="glossy_icon hover:text-green-text">
-                  <FaCartPlus className="w-5 h-5" onClick={handleCart} />
-                </div>
-              </Badge>
-              <div className="glossy_icon hover:text-green-text">
-                <IoSearch className="w-5 h-5" />
+                <IoSearch className="h-5 w-5" />
               </div>
             </div>
           </div>
@@ -89,6 +146,12 @@ const DefaultHeader = () => {
 
       {/* Mobile Menu */}
       <MobileMenu />
+
+      {/* Dropdown User Account */}
+      <DropdownUserAccount
+        dropdownOpen={dropdownOpen}
+        handleLogout={handleLogout}
+      />
     </nav>
   );
 };

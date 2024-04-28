@@ -78,7 +78,7 @@ const packageData = [
   },
 ];
 
-const ManageLaptop = () => {
+const ManageProduct = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
    // Filtering function
@@ -88,7 +88,7 @@ const ManageLaptop = () => {
 
   return (
     <>
-      <Breadcrumb pageName="Manage Laptop" />
+      <Breadcrumb pageName="Manage Product" />
       <div className="flex justify-between items-center mb-4">
         <div className="w-80 relative">
           <input
@@ -104,18 +104,18 @@ const ManageLaptop = () => {
         </div>
         <div className="flex items-center gap-4">
           <Link
-            href={'/laptops/laptop-add'}
+            href={'/dashboard/products/manage_products'}
             className="flex items-center gap-2 rounded-md bg-meta-3 px-4 py-2 text-lg text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-10"
           >
             <AiFillPrinter className="h-5 w-5 " />
             Print Data
           </Link>
           <Link
-            href={'/laptops/laptop-add'}
+            href={'/dashboard/products/add_product'}
             className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-lg text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-10"
           >
             <GoArrowUpRight className="h-5 w-5 " />
-            Add New Laptop
+            Add New Product
           </Link>
         </div>
       </div>
@@ -221,4 +221,4 @@ const ManageLaptop = () => {
   );
 };
 
-export default ManageLaptop;
+export default ManageProduct;

@@ -47,7 +47,7 @@ const CardComponent = ({ isInStock }:any) => {
               </div>
               <div className="w-3/12 flex items-center justify-center">
                 <div className="card_icon rounded-full border p-3  hover:text-green-text text-grey-text">
-                  <FaCartPlus className="h-6 w-6 " />
+                  <FaCartPlus className="h-6 w-6 text-grey-text hover:text-green-text" />
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ const CardComponent = ({ isInStock }:any) => {
               </div>
               <div className="w-3/12 flex items-center justify-center">
                 <div className="card_icon rounded-full border p-3  hover:text-green-text text-grey-text">
-                  <FaCartPlus className="h-6 w-6 " />
+                  <FaCartPlus className="h-6 w-6 text-grey-text hover:text-green-text" />
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ const CardComponent = ({ isInStock }:any) => {
               </div>
               <div className="w-3/12 flex items-center justify-center">
                 <div className="card_icon rounded-full border p-3  hover:text-green-text text-grey-text">
-                  <FaCartPlus className="h-6 w-6 " />
+                  <FaCartPlus className="h-6 w-6 text-grey-text hover:text-green-text" />
                 </div>
               </div>
             </div>

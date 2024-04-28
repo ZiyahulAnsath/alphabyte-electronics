@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Manage Laptop | Alphabyte Electronics",
 };
 
-const ManageLaptopPage = () => {
+const ManageProductsPage = () => {
   return (
     <DefaultLayout>
       <ManageProduct/>
@@ -15,4 +15,4 @@ const ManageLaptopPage = () => {
   )
 }
 
-export default ManageLaptopPage
+export default ManageProductsPage
