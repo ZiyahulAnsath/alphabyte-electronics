@@ -1,7 +1,10 @@
 import { Divider } from "antd";
 import Link from "next/link";
 
-const CartCheckout = () => {
+const CartCheckout = ({subtotal}:any) => {
+
+  console.log(subtotal);
+  
   return (
     <>
       <div className="flex flex-col gap-3">
@@ -11,7 +14,7 @@ const CartCheckout = () => {
           </div>
           <div>
             <h4 className="text-grey-text font-semibold md:text-sm">
-              500000 <span>LKR</span>
+              {subtotal} <span>LKR</span>
             </h4>
           </div>
         </div>
@@ -42,7 +45,7 @@ const CartCheckout = () => {
           </div>
           <div>
             <h4 className=" font-semibold md:text-sm text-gray-2">
-              502300 <span>LKR</span>
+              {subtotal+300+2000} <span>LKR</span>
             </h4>
           </div>
         </div>

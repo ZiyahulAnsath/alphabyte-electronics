@@ -1,16 +1,40 @@
 import React, { useState } from "react";
 
-const LaptopBody = () => {
-  const [dimension, setDimension] = useState("");
-  const [weight, setWeight] = useState("");
-  const [build, setBuild] = useState("");
-  const [sim, setSim] = useState("");
+const LaptopBody = ({ onBodyDataChange }: any) => {
+  const [bodyData, setBodyData] = useState({
+    dimension: "",
+    weight: "",
+    build: "",
+    sim: "",
+  });
 
-  const clearAllInputs = () => {
-    setDimension("");
-    setWeight("");
-    setBuild("");
-    setSim("");
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setBodyData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value
+  //   }));
+  // };
+
+  // React.useEffect(() => {
+  //   onBodyDataChange(bodyData);
+  // }, [bodyData, onBodyDataChange]);
+
+  const handleClearData = () => {
+    setBodyData({
+      dimension: "",
+      weight: "",
+      build: "",
+      sim: "",
+    });
+  };
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setBodyData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    onBodyDataChange({ ...bodyData, [name]: value }); // Notify parent about data change
   };
 
   return (
@@ -21,12 +45,12 @@ const LaptopBody = () => {
             Dimension
           </label>
           <input
+            name="dimension"
+            onChange={handleInputChange}
+            value={bodyData.dimension}
             type="text"
             placeholder="Dimension"
-            value={dimension}
-            onChange={(e) => setDimension(e.target.value)}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-            name="dimension"
           />
         </div>
         <div>
@@ -34,12 +58,12 @@ const LaptopBody = () => {
             Weight
           </label>
           <input
+            name="weight"
+            onChange={handleInputChange}
+            value={bodyData.weight}
             type="text"
             placeholder="Weight"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-            name="weight"
           />
         </div>
         <div>
@@ -47,12 +71,12 @@ const LaptopBody = () => {
             Build
           </label>
           <input
+            name="build"
+            onChange={handleInputChange}
+            value={bodyData.build}
             type="text"
             placeholder="Build"
-            value={build}
-            onChange={(e) => setBuild(e.target.value)}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-            name="build"
           />
         </div>
         <div>
@@ -60,19 +84,19 @@ const LaptopBody = () => {
             Sim
           </label>
           <input
+            name="sim"
+            onChange={handleInputChange}
+            value={bodyData.sim}
             type="text"
             placeholder="Sim"
-            value={sim}
-            onChange={(e) => setSim(e.target.value)}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-            name="sim"
           />
         </div>
       </div>
       <div className="mt-4 flex justify-end">
         <button
-          className="hover:bg-graydark rounded-lg bg-primary px-4 py-2 dark:hover:bg-meta-7 text-white transition duration-300 focus:outline-none"
-          onClick={clearAllInputs}
+          className="rounded-lg bg-primary px-4 py-2 text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-7"
+          onClick={handleClearData}
         >
           Clear All
         </button>

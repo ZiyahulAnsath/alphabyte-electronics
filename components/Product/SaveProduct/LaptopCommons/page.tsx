@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 
-const LaptopCommons = () => {
-  const [wlan, setWlan] = useState("");
-  const [bluetooth, setBluetooth] = useState("");
-  const [typeC, setTypeC] = useState("");
-  const [usb, setUsb] = useState("");
-  const [cardReader, setCardReader] = useState("");
-  const [hdmi, setHdmi] = useState("");
-  const [ethernet, setEthernet] = useState("");
-  const [headphoneJack, setHeadphoneJack] = useState("");
+const LaptopCommons = ({ onCommonsData }: any) => {
+  const [commonsData, setCommonsData] = useState({
+    wlan: "",
+    bluetooth: "",
+    type_c: "",
+    usb: "",
+    cardReader: "",
+    hdmi: "",
+    ethernet: "",
+    headphoneJack: "",
+  });
 
-  const clearAllInputs = () => {
-    setWlan("");
-    setBluetooth("");
-    setTypeC("");
-    setUsb("");
-    setCardReader("");
-    setHdmi("");
-    setEthernet("");
-    setHeadphoneJack("");
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setCommonsData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    onCommonsData({ ...commonsData, [name]: value }); // Notify parent about data change
   };
 
   return (
@@ -31,8 +31,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="WLAN"
-            value={wlan}
-            onChange={(e) => setWlan(e.target.value)}
+            value={commonsData.wlan}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="wlan"
           />
@@ -44,8 +44,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="Bluetooth"
-            value={bluetooth}
-            onChange={(e) => setBluetooth(e.target.value)}
+            value={commonsData.bluetooth}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="bluetooth"
           />
@@ -57,10 +57,10 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="Type C"
-            value={typeC}
-            onChange={(e) => setTypeC(e.target.value)}
+            value={commonsData.type_c}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-            name="typeC"
+            name="type_c"
           />
         </div>
         <div>
@@ -70,8 +70,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="USB"
-            value={usb}
-            onChange={(e) => setUsb(e.target.value)}
+            value={commonsData.usb}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="usb"
           />
@@ -83,8 +83,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="Card Reader"
-            value={cardReader}
-            onChange={(e) => setCardReader(e.target.value)}
+            value={commonsData.cardReader}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="cardReader"
           />
@@ -96,8 +96,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="HDMI"
-            value={hdmi}
-            onChange={(e) => setHdmi(e.target.value)}
+            value={commonsData.hdmi}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="hdmi"
           />
@@ -109,8 +109,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="Ethernet"
-            value={ethernet}
-            onChange={(e) => setEthernet(e.target.value)}
+            value={commonsData.ethernet}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="ethernet"
           />
@@ -122,8 +122,8 @@ const LaptopCommons = () => {
           <input
             type="text"
             placeholder="Headphone Jack"
-            value={headphoneJack}
-            onChange={(e) => setHeadphoneJack(e.target.value)}
+            value={commonsData.headphoneJack}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="headphoneJack"
           />
@@ -131,8 +131,8 @@ const LaptopCommons = () => {
       </div>
       <div className="mt-4 flex justify-end">
         <button
-          className="hover:bg-graydark rounded-lg bg-primary px-4 py-2 dark:hover:bg-meta-7 text-white transition duration-300 focus:outline-none"
-          onClick={clearAllInputs}
+          className="rounded-lg bg-primary px-4 py-2 text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-7"
+          // onClick={clearAllInputs}
         >
           Clear All
         </button>

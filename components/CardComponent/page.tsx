@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import lgo1 from "@/public/images/product/1.png";
 import lgo2 from "@/public/images/product//2.png";
 import lgo3 from "@/public/images/product//3.png";

@@ -1,20 +1,27 @@
-"use client";
-import { useState } from "react";
-import { RiDeleteBinFill, RiDeleteBinLine } from "react-icons/ri";
+// ImageUploader.jsx
 
-const ImageUploader = () => {
+"use client";
+import React, { useState } from "react";
+import { RiDeleteBinLine } from "react-icons/ri";
+
+interface ImageUploaderProps {
+  onImageUpload: (files: FileList) => void;
+}
+
+const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [imageFiles, setImageFiles] = useState<FileList | null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      const fileList = Array.from(files);
-      setImageFiles(files);
+      const fileList: FileList = files; // Define the type explicitly as FileList
+      setImageFiles(fileList);
 
-      // Check if total images are between 1 and 5
       if (fileList.length > 0 && fileList.length <= 5) {
-        setSelectedImages(fileList.map((file) => URL.createObjectURL(file)));
+        setSelectedImages(Array.from(fileList).map((file) => URL.createObjectURL(file)));
+        // Call the onImageUpload function with the uploaded files
+        onImageUpload(fileList);
       } else {
         alert("Please select between 1 and 5 images.");
       }
@@ -22,9 +29,24 @@ const ImageUploader = () => {
   };
 
   const handleDeleteImage = (index: number) => {
+    if (!imageFiles) return;
+
     const updatedImages = [...selectedImages];
     updatedImages.splice(index, 1);
     setSelectedImages(updatedImages);
+
+    const updatedFiles = Array.from(imageFiles);
+    updatedFiles.splice(index, 1);
+
+    const newFileList = new DataTransfer();
+    updatedFiles.forEach((file) => {
+      newFileList.items.add(file);
+    });
+
+    setImageFiles(newFileList.files);
+
+    // Call the onImageUpload function with the updated image list
+    onImageUpload(newFileList.files);
   };
 
   return (

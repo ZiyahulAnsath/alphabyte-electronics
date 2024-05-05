@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
@@ -6,12 +7,49 @@ import { BiUser } from "react-icons/bi";
 import { CiLock, CiMail } from "react-icons/ci";
 import Header from "@/components/Header/page";
 
-export const metadata: Metadata = {
-  title: "SignUp Page | Alphabyte Electronics",
-  description: "This is Next.js SignUp Page Alphabyte Electronics Template",
-};
+// export const metadata: Metadata = {
+//   title: "SignUp Page | Alphabyte Electronics",
+//   description: "This is Next.js SignUp Page Alphabyte Electronics Template",
+// };
 
 const SignUp: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5050/api/v1/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        // Handle success, e.g., redirect user to another page
+        console.log("User registered successfully");
+      } else {
+        // Handle error
+        console.error("Registration failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <>
       {/* <!-- ===== Header Start ===== --> */}
@@ -44,7 +82,7 @@ const SignUp: React.FC = () => {
                 </p>
 
                 <span className="mt-15 inline-block">
-                <Image
+                  <Image
                     src={"/images/illustration/signup.svg"}
                     alt="Logo"
                     width={350}
@@ -61,7 +99,7 @@ const SignUp: React.FC = () => {
                   Sign Up to AlphaByte
                 </h2>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-4">
                     <label className="mb-2.5 block font-medium text-black dark:text-white">
                       Name
@@ -69,12 +107,15 @@ const SignUp: React.FC = () => {
                     <div className="relative">
                       <input
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="Enter your full name"
                         className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                       />
 
                       <span className="absolute right-4 top-4">
-                       <BiUser className="w-5 h-5"/>
+                        <BiUser className="w-5 h-5" />
                       </span>
                     </div>
                   </div>
@@ -86,12 +127,15 @@ const SignUp: React.FC = () => {
                     <div className="relative">
                       <input
                         type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="Enter your email"
                         className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                       />
 
                       <span className="absolute right-4 top-4">
-                      <CiMail className="w-5 h-5"/>
+                        <CiMail className="w-5 h-5" />
                       </span>
                     </div>
                   </div>
@@ -103,12 +147,15 @@ const SignUp: React.FC = () => {
                     <div className="relative">
                       <input
                         type="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
                         placeholder="Enter your password"
                         className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                       />
 
                       <span className="absolute right-4 top-4">
-                      <CiLock className="w-5 h-5"/>
+                        <CiLock className="w-5 h-5" />
                       </span>
                     </div>
                   </div>
@@ -120,12 +167,15 @@ const SignUp: React.FC = () => {
                     <div className="relative">
                       <input
                         type="password"
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
                         placeholder="Re-enter your password"
                         className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                       />
 
                       <span className="absolute right-4 top-4">
-                      <CiLock className="w-5 h-5"/>
+                        <CiLock className="w-5 h-5" />
                       </span>
                     </div>
                   </div>
@@ -140,7 +190,12 @@ const SignUp: React.FC = () => {
 
                   <button className="flex w-full items-center justify-center gap-3.5 rounded-lg border border-stroke bg-gray p-3 py-2 hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50">
                     <span>
-                      <Image src={'/images/brand/brand-01.svg'} alt="Google" width={35} height={35}/>
+                      <Image
+                        src={"/images/brand/brand-01.svg"}
+                        alt="Google"
+                        width={35}
+                        height={35}
+                      />
                     </span>
                     Sign up with Google
                   </button>

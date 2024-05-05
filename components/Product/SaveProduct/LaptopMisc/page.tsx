@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
-const LaptopMisc = () => {
-  const [color, setColor] = useState("");
-  const [models, setModels] = useState("");
-  const [warranty, setWarranty] = useState("");
+const LaptopMisc = ({ onMiscData }: any) => {
+  const [miscData, setMiscData] = useState({
+    color: "",
+    warranty: "",
+  });
 
-  const clearAllInputs = () => {
-    setColor("");
-    setModels("");
-    setWarranty("");
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setMiscData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    onMiscData({ ...miscData, [name]: value }); // Notify parent about data change
   };
 
   return (
@@ -21,25 +25,25 @@ const LaptopMisc = () => {
           <input
             type="text"
             placeholder="Color"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
+            value={miscData.color}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="color"
           />
         </div>
-        <div>
+        {/* <div>
           <label className="block pb-2 text-sm font-medium text-black dark:text-white">
             Models
           </label>
           <input
             type="text"
             placeholder="Models"
-            value={models}
-            onChange={(e) => setModels(e.target.value)}
+            value={miscData.warranty}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="models"
           />
-        </div>
+        </div> */}
         <div>
           <label className="block pb-2 text-sm font-medium text-black dark:text-white">
             Warranty
@@ -47,8 +51,8 @@ const LaptopMisc = () => {
           <input
             type="text"
             placeholder="Warranty"
-            value={warranty}
-            onChange={(e) => setWarranty(e.target.value)}
+            value={miscData.warranty}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="warranty"
           />
@@ -56,8 +60,8 @@ const LaptopMisc = () => {
       </div>
       <div className="mt-4 flex justify-end">
         <button
-          className="hover:bg-graydark rounded-lg bg-primary px-4 py-2 dark:hover:bg-meta-7 text-white transition duration-300 focus:outline-none"
-          onClick={clearAllInputs}
+          className="rounded-lg bg-primary px-4 py-2 text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-7"
+          // onClick={clearAllInputs}
         >
           Clear All
         </button>

@@ -1,6 +1,8 @@
 import ShoppingCart from "@/components/ShoppinCart/page";
 
 const Cart = () => {
+
+  
   return (
     <>
       <div className="bg-grey-bg_primary min-h-screen">

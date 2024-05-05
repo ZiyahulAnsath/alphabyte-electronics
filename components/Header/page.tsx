@@ -9,7 +9,7 @@ import { FaRegUser } from "react-icons/fa";
 import DropdownUserAccount from "./DropdownUserAccount";
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { IoSearch } from "react-icons/io5";
-
+import DropdownAdminAccount from "./DropdownAdminAccount/page";
 
 const Links = [
   {
@@ -32,24 +32,25 @@ const Links = [
 
 const DefaultHeader = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+  const [dropdownOpenAdmin, setDropdownOpenAdmin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Effect to check if user is already logged in when component mounts
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
+    const email = localStorage.getItem("email");
+    if (token && email) {
       setIsLoggedIn(true);
     }
   }, []);
 
-  // Function to handle user logout
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove token from localStorage
-    setIsLoggedIn(false); // Set isLoggedIn to false
-    // navigate("/"); // Redirect to home page after logout
-    // toast("Logged out from application!", {
-    //   icon: "😔",
-    // });
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
+    localStorage.removeItem("username");
+    setIsLoggedIn(false);
+
+    window.location.href = "/auth/signin";
   };
 
   return (
@@ -92,7 +93,34 @@ const DefaultHeader = () => {
               </Link>
             </div>
             <div className="flex items-center gap-5">
-              {isLoggedIn ? (
+              {isLoggedIn && localStorage.getItem("role") === "admin" ? (
+                <>
+                  <Link
+                    onClick={() => setDropdownOpenAdmin(!dropdownOpenAdmin)}
+                    className="flex items-center gap-4"
+                    href="#"
+                  >
+                    <span className="hidden text-right lg:block">
+                      <span className="block text-sm font-semibold">
+                        {localStorage.getItem("username")?.toUpperCase()}
+                      </span>
+                    </span>
+
+                    <span className="h-12 w-12 rounded-full">
+                      <Image
+                        width={112}
+                        height={112}
+                        src={"/images/user/user-01.png"}
+                        style={{
+                          width: "auto",
+                          height: "auto",
+                        }}
+                        alt="User"
+                      />
+                    </span>
+                  </Link>
+                </>
+              ) : isLoggedIn ? (
                 <>
                   <Link
                     onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -100,8 +128,8 @@ const DefaultHeader = () => {
                     href="#"
                   >
                     <span className="hidden text-right lg:block">
-                      <span className="block text-sm font-medium">
-                        Ziyahul Ansath
+                      <span className="block text-sm font-semibold">
+                        {localStorage.getItem("username")?.toUpperCase()}
                       </span>
                     </span>
 
@@ -120,13 +148,12 @@ const DefaultHeader = () => {
                   </Link>
                 </>
               ) : (
-                <>
-                  <Link href={"/auth/signin"}>
-                    <div className="glossy_icon hover:text-green-text">
-                      <FaRegUser className="h-5 w-5" />
-                    </div>
-                  </Link>
-                </>
+                // Render components for non-logged-in users
+                <Link href={"/auth/signin"}>
+                  <div className="glossy_icon hover:text-green-text">
+                    <FaRegUser className="h-5 w-5" />
+                  </div>
+                </Link>
               )}
 
               <Link href={"/cart"}>
@@ -148,6 +175,10 @@ const DefaultHeader = () => {
       <MobileMenu />
 
       {/* Dropdown User Account */}
+      <DropdownAdminAccount
+        dropdownOpenAdmin={dropdownOpenAdmin}
+        handleAdminLogout={handleLogout}
+      />
       <DropdownUserAccount
         dropdownOpen={dropdownOpen}
         handleLogout={handleLogout}

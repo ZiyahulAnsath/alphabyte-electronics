@@ -1,5 +1,6 @@
 import Categories from "@/components/Categories/page";
 import Footer from "@/components/Footer/page";
+import GeminiModal from "@/components/GeminiModal/page";
 import Header from "@/components/Header/page";
 import React from "react";
 
@@ -23,6 +24,7 @@ const DefaultMainLayout = ({ children }: { children: React.ReactNode }) => {
               </div>
               {/* <!-- ===== Sidebar End ===== --> */}
               <div className="w-full md:w-3/4 lg:w-5/6 md:pl-4 lg:px-6 md:px-0 px-4">{children}</div>
+              <GeminiModal/>
             </div>
           </main>
           {/* <!-- ===== Main Content End ===== --> */}

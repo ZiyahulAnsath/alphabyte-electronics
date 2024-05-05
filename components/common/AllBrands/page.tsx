@@ -1,8 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown, IoMdAddCircleOutline } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { getAllBrands } from "@/slices/brandSlice";
+
 
 const Brands: React.FC<{ setSelectedBrand: (brand: string) => void }> = ({
   setSelectedBrand,
@@ -14,8 +18,13 @@ const Brands: React.FC<{ setSelectedBrand: (brand: string) => void }> = ({
     setIsBrandSelected(true);
   };
 
-  const brands: string[] = ["Asus", "HP", "Dell"];
+  const dispatch = useDispatch();
+    const brands = useSelector((state:RootState) => state.brand.brands);
 
+    useEffect(()=>{
+        dispatch(getAllBrands());
+    },[dispatch])
+    
   return (
     <div className="flex gap-2">
       <div className="basis-3/4">
@@ -34,9 +43,9 @@ const Brands: React.FC<{ setSelectedBrand: (brand: string) => void }> = ({
             <option value="" disabled>
               Select Brand
             </option>
-            {brands.map((brand, index) => (
-              <option key={index} value={brand}>
-                {brand}
+            {brands.map((brand:any) => (
+              <option key={brand._id} value={brand.name}>
+                {brand.name}
               </option>
             ))}
           </select>

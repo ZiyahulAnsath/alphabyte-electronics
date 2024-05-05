@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown, IoMdAddCircleOutline } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { getAllLaptopModels } from "@/slices/laptopModelSlice";
 
-const Models: React.FC<{ setSelectedModel: (model: string) => void }> = ({
+
+const Models: React.FC<{ setSelectedModel: (productmodel: string) => void }> = ({
   setSelectedModel,
 }) => {
   const [selectedModel, setSelectedModelLocal] = useState<string>("");
@@ -14,7 +18,12 @@ const Models: React.FC<{ setSelectedModel: (model: string) => void }> = ({
     setIsModelSelected(true);
   };
 
-  const models: string[] = ["Swift", "ROG", "XPS"];
+  const dispatch = useDispatch();
+  const models = useSelector((state:RootState) => state.laptopModel.laptopModels);
+
+  useEffect(()=>{
+      dispatch(getAllLaptopModels());
+  },[dispatch])
 
   return (
     <div className="flex gap-2">
@@ -34,9 +43,9 @@ const Models: React.FC<{ setSelectedModel: (model: string) => void }> = ({
             <option value="" disabled>
               Select Model
             </option>
-            {models.map((model, index) => (
-              <option key={index} value={model}>
-                {model}
+            {models.map((productmodel:any) => (
+              <option key={productmodel._id} value={productmodel.name}>
+                {productmodel.name}
               </option>
             ))}
           </select>

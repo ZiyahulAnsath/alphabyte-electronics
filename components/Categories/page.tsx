@@ -11,10 +11,11 @@ export default function Categories() {
             <div className="flex md:gap-8 items-center bg-grey-bg_categories  ease-in-out duration-300 hover:bg-green-text hover:text-grey-bg_primary text-grey-text border-none rounded-r-md mb-3">
               <div className="mx-auto">
                 <Image
-                  src={"/images/logo/logo-icon2.svg"}
+                className="bg-grey-text"
+                  src={item.img}
                   alt="logo"
-                  width={60}
-                  height={60}
+                  width={50}
+                  height={50}
                 />
               </div>
               <div className="w-2/3 uppercase font-bold ">{item.name}</div>

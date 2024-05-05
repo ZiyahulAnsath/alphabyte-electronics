@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import lgo1 from "@/public/images/brand/apple.svg";
 import { BsTrash3 } from "react-icons/bs";
 
-const MobileCartTable = () => {
+const MobileCartTable = ({ cart }: any) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const handleCheckboxChange = (itemId: any, itemStatus: any) => {
@@ -13,6 +13,16 @@ const MobileCartTable = () => {
     } else {
       setSelectedItems([...selectedItems, itemId]);
     }
+
+    useEffect(() => {
+      // Make sure cart is an array before setting cartData
+      if (Array.isArray(cart)) {
+        setSelectedItems(cart);
+      } else {
+  
+        setSelectedItems(Object.values(cart).map((item: any, index: number) => ({ ...item, key: index })));
+      }
+    }, [cart]);
 
     // Log details of the selected item
     console.log("Selected Item:", { id: itemId, status: itemStatus });

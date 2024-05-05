@@ -2,17 +2,18 @@
 import FillterCardComponent from "@/components/CardComponent/FillterCardComponent/page";
 import FillterHeading from "@/components/FillterComponent/Common/FillterHeading/page";
 import FillterComponent from "@/components/FillterComponent/page";
+
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { HiMiniBars3 } from "react-icons/hi2";
 
-const Laptop = () => {
+const Product = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
   const isInStock = true;
+  
   return (
     <>
       <div className="flex flex-row gap-3">
@@ -69,4 +70,4 @@ const Laptop = () => {
   );
 };
 
-export default Laptop;
+export default Product;

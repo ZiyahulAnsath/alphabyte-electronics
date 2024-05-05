@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
-const LaptopSound = () => {
-  const [audio, setAudio] = useState("");
-  const [chip, setChip] = useState("");
-  const [speakers, setSpeakers] = useState("");
-  const [microphone, setMicrophone] = useState("");
-
-  const clearAllInputs = () => {
-    setAudio("");
-    setChip("");
-    setSpeakers("");
-    setMicrophone("");
+const LaptopSound = ({ onSoundChange }: any) => {
+  const [soundData, setsoundData] = useState({
+    audio: "",
+    chip: "",
+    speakers: "",
+    microphone: "",
+  });
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setsoundData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    onSoundChange({ ...soundData, [name]: value }); // Notify parent about data change
   };
-
   return (
     <>
       <div className="grid grid-cols-3 gap-2">
@@ -23,8 +25,8 @@ const LaptopSound = () => {
           <input
             type="text"
             placeholder="Audio"
-            value={audio}
-            onChange={(e) => setAudio(e.target.value)}
+            value={soundData.audio}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="audio"
           />
@@ -36,8 +38,8 @@ const LaptopSound = () => {
           <input
             type="text"
             placeholder="Chip"
-            value={chip}
-            onChange={(e) => setChip(e.target.value)}
+            value={soundData.chip}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="chip"
           />
@@ -49,8 +51,8 @@ const LaptopSound = () => {
           <input
             type="text"
             placeholder="Speakers"
-            value={speakers}
-            onChange={(e) => setSpeakers(e.target.value)}
+            value={soundData.speakers}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="speakers"
           />
@@ -62,8 +64,8 @@ const LaptopSound = () => {
           <input
             type="text"
             placeholder="Microphone"
-            value={microphone}
-            onChange={(e) => setMicrophone(e.target.value)}
+            value={soundData.microphone}
+            onChange={handleInputChange}
             className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             name="microphone"
           />
@@ -71,8 +73,8 @@ const LaptopSound = () => {
       </div>
       <div className="mt-4 flex justify-end">
         <button
-          className="hover:bg-graydark rounded-lg bg-primary px-4 py-2 dark:hover:bg-meta-7 text-white transition duration-300 focus:outline-none"
-          onClick={clearAllInputs}
+          className="rounded-lg bg-primary px-4 py-2 text-white transition duration-300 hover:bg-graydark focus:outline-none dark:hover:bg-meta-7"
+          // onClick={clearAllInputs}
         >
           Clear All
         </button>

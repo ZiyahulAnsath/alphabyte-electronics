@@ -1,4 +1,4 @@
-const Price = ({ laptop, quantity, setQuantity }:any) => {
+const Price = ({ product, quantity, setQuantity }:any) => {
   //   const handleQuantityChange = (e) => {
   //     const newQuantity = parseInt(e.target.value, 10);
   //     setQuantity(newQuantity);
@@ -16,11 +16,11 @@ const Price = ({ laptop, quantity, setQuantity }:any) => {
     }
   };
 
-  console.log(laptop?.misc[0]?.price);
+  // console.log(product?.misc[0]?.price);
 
   const getTotalPrice = () => {
     // Assuming product.price is the price of a single item
-    return laptop?.misc[0]?.price * quantity;
+    // return product?.misc[0]?.price * quantity;
   };
   return (
     <>
@@ -43,7 +43,7 @@ const Price = ({ laptop, quantity, setQuantity }:any) => {
       <h6 className="text-xs text-grey-text">Minimum Quantity 1 Maximum Quantity 10</h6>
 
       <p className="text-3xl text-green-text font-bold">
-        <span>{laptop?.misc[0]?.price} LKR</span>
+        {/* <span>{product?.misc[0]?.price} LKR</span> */}
       </p>
       {/* <h2>Total Price: ${getTotalPrice()}</h2> */}
     </>

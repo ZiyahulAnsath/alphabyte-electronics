@@ -1,6 +1,12 @@
+'use client'
+
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown, IoMdAddCircleOutline } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { getAllCategories } from "@/slices/categorySlice";
+
 
 const Categories: React.FC<{ setSelectedCategory: (category: string) => void }> = ({ setSelectedCategory }) => {
     const [selectedCategory, setSelectedCategoryLocal] = useState<string>("");
@@ -10,7 +16,14 @@ const Categories: React.FC<{ setSelectedCategory: (category: string) => void }> 
         setIsCategorySelected(true);
     };
 
-    const categories: string[] = ["Laptop", "Storage", "Motherboards", "Processors", "RAM", "Cables"];
+    const dispatch = useDispatch();
+    const categories = useSelector((state:RootState) => state.category.categories);
+
+    useEffect(()=>{
+        dispatch(getAllCategories());
+    },[dispatch])
+    
+
 
     return (
         <div className="flex gap-2">
@@ -30,9 +43,9 @@ const Categories: React.FC<{ setSelectedCategory: (category: string) => void }> 
                         <option value="" disabled>
                             Select Category
                         </option>
-                        {categories.map((category, index) => (
-                            <option key={index} value={category}>
-                                {category}
+                        {categories.map((category:any) => (
+                            <option key={category._id} value={category.name}>
+                                {category.name}
                             </option>
                         ))}
                     </select>

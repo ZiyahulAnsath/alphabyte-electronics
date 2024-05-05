@@ -4,7 +4,7 @@ import { Carousel, Image } from "antd";
 import { CarouselRef } from "antd/es/carousel";
 import { useState, useRef } from "react";
 
-interface Laptop {
+interface product {
   id: number;
   brand: string;
   name: string;
@@ -12,7 +12,7 @@ interface Laptop {
   images: string[];
 }
 
-const ImageComponent = ({ laptop }: { laptop: Laptop }) => {
+const ImageComponent = ({ product }: { product: product }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<CarouselRef>(null);
 
@@ -38,7 +38,7 @@ const ImageComponent = ({ laptop }: { laptop: Laptop }) => {
             ref={carouselRef}
             dots={false}
           >
-            {laptop.images.map((image, index) => ( // Map over images from laptop prop
+            {product.images.map((image, index) => ( // Map over images from product prop
               <div key={index} className="flex justify-center">
                 <Image src={image} alt={`image${index + 1}`} width={400} />
               </div>
@@ -57,7 +57,7 @@ const ImageComponent = ({ laptop }: { laptop: Laptop }) => {
               }`}
               onClick={() => handleSilhouetteClick(index)}
             >
-              <Image src={laptop.images[index]} width={50} preview={false} />
+              <Image src={product.images[index]} width={50} preview={false} />
             </div>
           ))}
         </div>

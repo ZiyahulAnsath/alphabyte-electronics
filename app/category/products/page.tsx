@@ -1,4 +1,4 @@
-import Laptop from '@/components/Categories/Laptop/page';
+import Product from '@/components/Categories/Product/page';
 import DefaultMainLayout from '@/components/Layouts/DefaultMainLayout/page';
 import { Metadata } from 'next';
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const LaptopPage = () => {
   return (
     <DefaultMainLayout>
-        <Laptop/>
+       <Product/>
     </DefaultMainLayout>
   )
 }

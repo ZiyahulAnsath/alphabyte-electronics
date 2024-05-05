@@ -2,61 +2,67 @@ module.exports=[
     {
         "id": 1,
         "name": "Laptops",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
-        "pathName": "/laptops"
+        "img": "/images/category/laptop.svg",
+        "pathName": "/products"
     },
     {
         "id": 2,
         "name": "Desktop Workstations",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/733.jpg",
+        "img": "/images/category/cpu.svg",
         "pathName": "/desktop_workstations"
     },
     {
         "id": 3,
         "name": "Gamming Desktops",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/359.jpg",
+        "img": "/images/category/desktop.svg",
         "pathName": "/gamming_desktops"
     },
     {
         "id": 4,
         "name": "Budguet Desktop Computers",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/759.jpg",
+        "img": "/images/category/desktop.svg",
         "pathName": "/budguet_desktop_computers"
     },
     {
         "id": 5,
         "name": "Processors",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/909.jpg",
+        "img": "/images/category/processors.svg",
         "pathName": "/processors"
     },
     {
         "id": 6,
         "name": "Motherboards",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/758.jpg",
+        "img": "/images/category/motherboard.svg",
         "pathName": "/motherboards"
     },
     {
         "id": 7,
         "name": "Memory (RAM)",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/329.jpg",
+        "img": "/images/category/ram.svg",
         "pathName": "/memory_(ram)"
     },
     {
         "id": 8,
         "name": "Graphic Cards",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/109.jpg",
+        "img": "/images/category/gpu.svg",
         "pathName": "/graphic_cards"
     },
     {
         "id": 9,
         "name": "Power Supply",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/233.jpg",
+        "img": "/images/category/power.svg",
         "pathName": "/power_supply"
     },
     {
         "id": 10,
         "name": "Storage & NAS",
-        "img": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/242.jpg",
+        "img": "/images/category/storage.svg",
         "pathName": "/storage"
+    },
+    {
+        "id": 11,
+        "name": "Fan & Cooler",
+        "img": "/images/category/laptop.svg",
+        "pathName": "/Cooler"
     }
 ]
